@@ -60,14 +60,6 @@
   align-content: stretch;
 }
 
-@mixin absolute() {
-  position : absolute;
-  width    : 100%;
-  height   : 100%;
-  left     : 0;
-  top      : 0;
-}
-
 @mixin fix-cont() {
   position   : fixed;
   left       : 0;
@@ -91,13 +83,6 @@
   &::-moz-placeholder{ font : 1.175rem/55px Arial; color : #6f7588; }
 }
 
-@mixin transition($content,$time) {
-  -webkit-transition : $content $time;
-  -moz-transition    : $content $time;
-  -ms-transition     : $content $time;
-  -o-transition      : $content $time;
-  transition         : $content $time;
-}
 
 @mixin circle($radius) {
   height        : $radius;
@@ -131,20 +116,4 @@
   left   : $left;
   bottom : $bottom;
   right  : $right;
-}
-
-@mixin size($width,$height) {
-  width  : $width;
-  height : $height;
-}
-
-@mixin icon-bg($url) {
-  background : url($url) no-repeat center;
-}
-
-@mixin square($SQw,$SQh,$SQc) {
-  width            : $SQw;
-  height           : $SQh;
-  background-color : $SQc;
-  position         : relative;
 }

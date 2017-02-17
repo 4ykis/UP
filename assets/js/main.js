@@ -5,7 +5,15 @@
 // require('/node_modules/slick-carousel/slick/slick.min')($);
 var front = {
     FullPage:function (block) {
-        block.fullpage();
+        block.fullpage({
+            fixedElements: '#full-page-nav',
+            resize : true,
+            anchors:['intro', 'games','about-us', 'contacts'],
+            menu: '#full-page-nav',
+            animateAnchor: false,
+            css3:true
+            // scrollBar:true
+        });
     },
     Slider:{
       intro:function () {
@@ -17,9 +25,22 @@ var front = {
           })
       }
     },
+    Masonry:function () {
+        $('.js-mas-games').waterfall();
+    },
+    slideBg:function () {
+        $.each($('.js-slide-bg'),function () {
+            var src = $(this).find('img').attr('data-src');
+            $(this).css({
+                'background-image':'url("'+src+'")'
+            })
+        });
+    },
     init: function () {
         this.Slider.intro();
+        this.slideBg();
         this.FullPage($('#fullpage'));
+        this.Masonry();
     }
 };
 

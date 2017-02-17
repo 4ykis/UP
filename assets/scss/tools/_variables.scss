@@ -1,6 +1,28 @@
-$roboto: 'Roboto', Arial, Helvetica, sans-serif;
-
+$osw : 'Oswald', sans-serif;
+$robcon : 'Roboto Condensed', sans-serif;
+$leyton: 'Leyton', serif;
+$lime: 'LimeSlab', sans-serif;
 //fonts
 
 
+@font-face {
+  font-family: "LimeSlab";
+  src:url("../../fonts/LimeSlab/TTLimesSlab-Regular.eot");
+  src:url("../../fonts/LimeSlab/TTLimesSlab-Regular.eot?#iefix") format("embedded-opentype"),
+  url("../../fonts/LimeSlab/TTLimesSlab-Regular.woff") format("woff"),
+  url("../../fonts/LimeSlab/TTLimesSlab-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: "Leyton";
+  src:url("../../fonts/Leyton/LeytonPersonal-Bold.otf");
+  src:url("../../fonts/Leyton/LeytonPersonal-Bold.eot?#iefix") format("embedded-opentype"),
+  url("../../fonts/Leyton/LeytonPersonal-Bold.woff") format("woff"),
+  url("../../fonts/Leyton/LeytonPersonal-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 //colors

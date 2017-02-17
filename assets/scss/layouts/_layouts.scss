@@ -1,8 +1,11 @@
 .section{
   height : 100vh;
+  .container{
+	height : 100%;
+  }
 
   &:nth-child(2){
-	background : pink;
+	background : #fff;
   }
   &:nth-child(3){
 	background : yellow;
@@ -12,19 +15,111 @@
   }
 }
 
+#full-page-nav{
+  position        : fixed;
+  top             : 0;
+  right           : 0;
+  bottom          : 0;
+  width           : 60px;
+  display         : flex;
+  background      : rgba(0, 0, 0, .3);
+  z-index         : 5;
+  align-items     : center;
+  align-content   : center;
+  flex-wrap       : wrap;
+  transition      : .5s;
+  justify-content : center;
+
+				  //width : 200px;
+
+  li{
+	display    : block;
+	flex-basis : 100%;
+	height     : 50px;
+	transition : .5s;
+	a{
+	  line-height : 30px;
+	  height      : 50px;
+	  width       : 60px;
+	  max-width   : 200px;
+	  padding     : 10px 0;
+	  position    : relative;
+	  display     : block;
+	  transition  : .5s;
+	  &:after{
+		content    : '';
+		width      : 10px;
+		height     : 10px;
+		border     : 2px solid #4a6fba;
+		background : #ffffff;
+		position   : absolute;
+		right      : 20px;
+		transition : .5s;
+		top        : 50%;
+		transform  : translate(0, -50%) rotate(45deg);
+	  }
+
+	  span{
+					   //display : none;
+		opacity        : 0;
+		text-align     : right;
+		text-indent    : 200px;
+		display        : block;
+		white-space    : nowrap;
+		padding-right  : 60px;
+		padding-left   : 20px;
+		color          : #ffffff;
+		transition     : .5s;
+		text-transform : capitalize;
+	  }
+	  &:hover{
+		background : rgba(0, 0, 0, .5);
+		&:after{
+		  background   : #ff9900;
+		  border-color : #ffffff;
+		}
+	  }
+
+	}
+	&.active{
+	  a:after{
+		background   : #4a6fba;
+		border-color : #ffffff;
+	  }
+	}
+  }
+  &:hover{
+	width : 200px;
+	li{
+	  a{
+		width : 200px;
+		span{
+		  transition-delay : .5s;
+		  opacity          : 1;
+		  text-indent      : 0px;
+		}
+	  }
+	}
+  }
+}
+
 .intro{
-  background : #3ebb23;
-  width      : 100%;
-  height     : 100%;
+  position : relative;
+  width      : 100vw;
+  height     : 100vh;
   &__slider{
 	height     : 100%;
 	text-align : center;
+
 	&_cont{
-	  width    : 100vw;
-	  height   : 100vh;
-	  position : relative;
+	  width      : 100vw;
+	  height     : 100vh;
+	  position   : relative;
 	  text-align : center;
-	  overflow: hidden;
+	  overflow   : hidden;
+	  background-repeat :no-repeat;
+	  background-size :cover;
+	  background-position : center;
 	  &:after{
 		content    : '';
 		width      : 100%;
@@ -35,13 +130,197 @@
 		top        : 0;
 		bottom     : 0;
 		right      : 0;
-		background : rgba(0, 0, 0, .7);
+		background : rgba(0, 0, 0, .3);
 	  }
 	}
 	img{
+	  display : none;
+	  //display    : inline-block;
+	  min-height : 100vh;
+	  max-width  : none;
+	  min-width  : 100vw;
+	}
+  }
+
+  &__title{
+	position : absolute;
+	top : 40%;
+	left : 10%;
+	right :10%;
+	background : rgba(0,0,0,.4);
+	color : #ffffff;
+	text-align : center;
+	padding : 10px;
+	transform: translate(0,-50%);
+	border-radius: 5px;
+	box-shadow:0 0 10px 35px rgba(0,0,0,.4);
+	h1{
+	  font-size : 65px;
+	  font-family :$leyton;
+	  text-transform : uppercase;
+	  font-weight : 100;
+	}
+	a{
+	  margin-top : 40px;
 	  display : inline-block;
-	  height : 100vh;
-	  max-width: none;
+	  overflow: hidden;
+	  padding : 0 30px;
+	  line-height : 40px;
+	  border-radius: 20px;
+	  position : relative;
+	  color : #ffffff;
+	  text-transform : uppercase;
+	  font-family :$robcon;
+	  background : rgba(0,0,0,.3);
+	  border:2px solid #ff9900;
+	  transition: .5s;
+	  &:before{
+		content: '';
+		z-index :-1;
+		position : absolute;
+		top : 0;
+		bottom : 0;
+		width : 100%;
+		left : 0;
+		border-radius:15px;
+
+		right : 0;
+		transition: .5s;
+		background : #ff9900;
+		opacity: 0;
+		transform: scale(.5,1);
+	  }
+	  &:hover{
+		&:before{
+		  transform: scale(1,1);
+		  opacity :1;
+		}
+	  }
+	}
+  }
+}
+.games__title{
+  font-size : 45px;
+  font-family :$leyton;
+  text-transform : uppercase;
+  text-align : center;
+  font-weight : 100;
+  line-height : 17vh;
+}
+
+.games{
+  width : 100%;
+  height :70%;
+  @include clearfix();
+
+  &__dota{
+	width : 33%;
+	height : 66%;
+	padding : 5px;
+	.games__content{
+	  background : url('../../img/post/Dota.jpg') no-repeat center;
+	  background-size :cover;
+	}
+
+  }
+  &__csgo{
+	height : 33%;
+	width : 66%;
+	padding : 5px;
+	.games__content{
+	  background : url('../../img/post/csgo.jpg') no-repeat center;
+	  background-size :cover;
+	}
+  }
+  &__other{
+	width : 33%;
+	height : 33%;
+	padding : 5px;
+	.games__content{
+	  background : url('../../img/post/other.jpg') no-repeat center;
+	  background-size :cover;
+	}
+
+  }
+  &__SC{
+	width : 66%;
+	height : 33%;
+	padding : 5px;
+	.games__content{
+	  background : url('../../img/post/SC.jpg') no-repeat center;
+	  background-size :cover;
+	}
+
+  }
+  &__lol{
+	width : 33%;
+	height :66%;
+	padding : 5px;
+	.games__content{
+	  background : url('../../img/post/Lol.jpg') no-repeat center;
+	  background-size :cover;
+	}
+
+  }
+
+  &__content{
+	width : 100%;
+	height : 100%;
+	position : relative;
+	text-align : center;
+	padding : 15px 0;
+	&:before{
+	  content: '';
+	  position : absolute;
+	  @include position(0,0,0,0);
+	  background : rgba(0,0,0,.7);
+	  z-index :0;
+	}
+	&>*{
+	  position : relative;
+	  z-index :1;
+	}
+	.title{
+	  font-family :$leyton;
+	  font-size : 24px;
+	  font-weight : 100;
+	  color : #ffffff;
+	}
+	.description{
+	  margin : 10px 0;
+	  color : #ffffff;
+	  font-family :$osw;
+	  padding : 0 20px;
+	}
+	a{
+	  display : inline-block;
+	  padding : 0 30px;
+	  line-height : 40px;
+	  font-family :$robcon;
+	  text-transform : uppercase;
+	  color : #ffffff;
+	  margin-top : 20px;
+	  border:1px solid #ff9900;
+	  &:before{
+		content: '';
+		z-index :-1;
+		position : absolute;
+		top : 0;
+		bottom : 0;
+		width : 100%;
+		left : 0;
+		right : 0;
+		transition: .5s;
+		background : #ff9900;
+		opacity: 0;
+		transform: scale(.5,1);
+	  }
+	  &:hover{
+		&:before{
+		  transform: scale(1,1);
+		  opacity :1;
+		}
+	  }
 	}
   }
 }

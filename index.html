@@ -10,38 +10,113 @@
 	<link rel="stylesheet" href="assets/css/compressed/style.min.css">
 </head>
 <body>
-	<div id="fullpage">
-		<div class="section">
-			<section class="intro">
-				<div class="intro__slider js-slider-intro">
-					<div>
-						<div class="intro__slider_cont">
-							<img src="assets/img/lol-full.png" alt="">
-						</div>
-
-					</div>
-					<div>
-						<div class="intro__slider_cont">
-							<img src="assets/img/dota2-full.jpg" alt="">
-						</div>
-					</div>
-					<div>
-						<div class="intro__slider_cont">
-							<img src="assets/img/starcraft-full.jpg" alt="">
-						</div>
+<ul id="full-page-nav">
+	<li data-menuanchor="intro" class="active">
+		<a href="#intro">
+			<span>Intro</span>
+		</a>
+	</li>
+	<li data-menuanchor="games">
+		<a href="#games">
+			<span>Games</span>
+		</a>
+	</li>
+	<li data-menuanchor="about-us">
+		<a href="#about-us">
+			<span>About Us</span>
+		</a>
+	</li>
+	<li data-menuanchor="contacts">
+		<a href="#contacts">
+			<span>Contacts</span>
+		</a>
+	</li>
+</ul>
+<div id="fullpage">
+	<div class="section" data-anchor="intro">
+		<section class="intro">
+			<div class="intro__slider js-slider-intro">
+				<div>
+					<div class="intro__slider_cont js-slide-bg">
+						<img data-src="assets/img/lol-full.png" alt="">
 					</div>
 				</div>
-			</section>
-		</div>
-		<div class="section">Some section</div>
-		<div class="section">Some section</div>
-		<div class="section">Some section</div>
+				<div>
+					<div class="intro__slider_cont js-slide-bg">
+						<img data-src="assets/img/dota2-full.jpg" alt="">
+					</div>
+				</div>
+				<div>
+					<div class="intro__slider_cont js-slide-bg">
+						<img data-src="assets/img/starcraft-full.jpg" alt="">
+					</div>
+				</div>
+			</div>
+			<div class="intro__title">
+				<h1>We play in the same game that you</h1>
+				<a href="#games">Join us Now</a>
+			</div>
+		</section>
 	</div>
+	<div class="section" data-anchor="games">
+		<div class="container">
+			<h2 class="games__title">Choose your game</h2>
+			<div class="games js-mas-games" data-col-min-width="330" data-default-container-width="1000">
+				<div class="games__dota" data-span="1">
+					<div class="games__content">
+						<p class="title">Dota 2</p>
+						<p class="description">
+							Dota is a competitive game of action and strategy, played both professionally and casually
+							by millions of passionate fans worldwide.
+						</p>
+						<a href="">Join</a>
+					</div>
+				</div>
+				<div class="games__csgo" data-span="2">
+					<div class="games__content">
+						<p class="title">Counter Strike: Global Offensive</p>
+						<p class="description">
+							Counter-Strike: Global Offensive (CS:GO) expands upon the team-based action gameplay
+						</p>
+						<a href="">Join</a>
+					</div>
+				</div>
+				<div class="games__other" data-span="1">
+					<div class="games__content">
+						<p class="title">Other Games</p>
+						<a href="">Join</a>
+					</div>
+				</div>
+				<div class="games__SC" data-span="2">
+					<div class="games__content">
+						<p class="title">Star Craft 2</p>
+						<p class="description">StarCraft II sci-fi real-time strategy.
+							game. </p>
+						<a href="">Join</a>
+					</div>
+				</div>
+				<div class="games__lol" data-span="1">
+					<div class="games__content">
+						<p class="title">league of legends</p>
+						<p class="description">League of Legends is a fast-paced, competitive online game that blends
+							the speed and intensity of an RTS with RPG elements.</p>
+						<a href="">Join</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="section" data-anchor="about-us">Some section</div>
+	<div class="section" data-anchor="contacts">Some section</div>
+</div>
 
-	<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 
-	<script type="text/javascript" src="assets/js/jquery.fullpage.js"></script>
-	<script type="text/javascript" src="assets/js/vendor/slick.min.js"></script>
-	<script type="text/javascript" src="assets/js/build.js"></script>
+<script type="text/javascript" src="assets/js/jquery.fullpage.js"></script>
+<script type="text/javascript" src="assets/js/vendor/zepto.js"></script>
+
+<script type="text/javascript" src="assets/js/vendor/jquery.waterfall.js"></script>
+<script type="text/javascript" src="assets/js/vendor/slick.min.js"></script>
+<script type="text/javascript" src="assets/js/build.js"></script>
 </body>
 </html>
