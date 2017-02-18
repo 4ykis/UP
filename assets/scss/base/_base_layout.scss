@@ -74,28 +74,11 @@ a.button{
     padding: 0 15px;
     margin: 0 auto;
 }
-.f-wrap{
-  display: flex;
-  align-content: stretch;
-  align-items:stretch;
-  flex-wrap: wrap;
-  justify-content:flex-start;
-  &.no-wrap{
-    flex-wrap: nowrap;
-  }
-}
-.colorFF9900{
-  color: #ff9900;
-}
-.color99FF99{
-  color: #99ff99;
-}
-.colorEEEEEE{
-  color: #eeeeee;
-}
-.colorDD5599{
-  color: #dd5599;
-}
-.color919191{
-  color: #919191;
+.particles-js-canvas-el{
+  position : absolute;
+  left : 0;
+  top : 0;
+  right : 0;
+  bottom : 0;
+  z-index :0;
 }
