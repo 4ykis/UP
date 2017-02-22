@@ -16,20 +16,41 @@ var front = {
         });
     },
     Slider:{
-      intro:function () {
-          $('.js-slider-intro').slick({
-              arrows:false,
-              dots:false,
-              autoplay:true,
-              infinite:true
-          })
-      }
+        intro:function () {
+            $('.js-slider-intro').slick({
+                arrows:false,
+                dots:false,
+                autoplay:true,
+                infinite:true
+            })
+        }
+    },
+    menuBtn:function () {
+      $('.js-menu-btn').on('click',function () {
+          $(this).toggleClass('open');
+          $(this).parent().toggleClass('open');
+      });
+
+      $('#full-page-nav li').on('click',function () {
+          $('.js-menu-btn').toggleClass('open').parent().toggleClass('open');
+          if($(window).width() < 1000 ){
+              var link = $(this).attr('data-menuanchor');
+              var top = $('[data-anchor="'+link+'"]').offset().top;
+              $('html,body').animate({scrollTop:top},500);
+          }
+      })
     },
     Scroll:function () {
-        $('.js-pf-scroll').perfectScrollbar();
-    },
-    Masonry:function () {
-        $('.js-mas-games').waterfall();
+        var block = $('.js-pf-scroll');
+        block.perfectScrollbar({
+            autoScrolling: false
+        });
+        if($(window).width() < 1000){
+
+            // $.fn.fullpage.reBuild();
+            $.fn.fullpage.destroy('all');
+            $.fn.fullpage.setAutoScrolling(false);
+        }
     },
     slideBg:function () {
         $.each($('.js-slide-bg'),function () {
@@ -55,20 +76,58 @@ var front = {
             })
         }
     },
+    sldieDownTitle:function () {
+      $('.js-slide-down a').on('click',function () {
+          if($(window).width() < 1000 ){
+              var top = $('[data-anchor="games"]').offset().top;
+              $('html,body').animate({scrollTop:top},500);
+          }
+      })
+    },
+    reload:function () {
+        var w = $(window).width();
+        $(window).resize(function () {
+           var afterw = $(window).width();
+           if(w > 1350){
+               if(afterw < 1350){
+                   location.reload();
+               }
+           }else if(w>1000){
+               if(afterw < 1000 || afterw > 1350){
+                   location.reload();
+               }
+           }else if(w>570){
+               if(afterw < 570 || afterw > 1000){
+                   location.reload();
+               }
+           }else if(w<570){
+               if(afterw > 570){
+                   location.reload();
+               }
+           }
+
+
+
+        });
+    },
     init: function () {
         this.Slider.intro();
         this.slideBg();
+        this.menuBtn();
         this.FullPage($('#fullpage'));
-        this.Masonry();
-        this.Particles();
+        // this.Particles();
         this.Scroll();
         this.popup.about();
+        this.reload();
+        this.sldieDownTitle();
+
     }
 };
 
 $(document).ready(function() {
     front.init();
-
 });
+
+// E29D4D
 
 

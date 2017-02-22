@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Title</title>
 
+	<meta name="viewport" content="width=device-width">
 	<link rel="stylesheet" href="assets/css/vendor/FullPage.min.css">
 	<link rel="stylesheet" href="assets/css/vendor/perfect-scrollbar.css">
 	<link rel="stylesheet" href="assets/css/vendor/slick.min.css">
@@ -11,7 +12,7 @@
 </head>
 <body>
 <ul id="full-page-nav">
-	<li data-menuanchor="intro" class="active">
+	<li data-menuanchor="intro" class="active" >
 		<a href="#intro">
 			<span>Intro</span>
 		</a>
@@ -31,6 +32,12 @@
 			<span>Contacts</span>
 		</a>
 	</li>
+	<div class="js-menu-btn menu-icon">
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+	</div>
 	<p class="copyright">© UP community, 2017</p>
 </ul>
 <div id="fullpage">
@@ -53,19 +60,19 @@
 					</div>
 				</div>
 			</div>
-			<div class="intro__title">
+			<div class="intro__title js-slide-down">
 				<h1>We play in the same game that you</h1>
 				<a href="#games">Join us Now</a>
 			</div>
 		</section>
 	</div>
-	<div class="section" id="particles-js" data-anchor="games">
+	<div class="section" data-anchor="games">
 		<div class="container">
 			<h2 class="games__title">Choose your game</h2>
 			<p class="games__subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi porro, ullam.
 				Consectetur consequuntur hic id ipsa officiis veniam voluptatibus. Ipsam? </p>
-			<div class="games js-mas-games" data-col-min-width="330" data-default-container-width="1000">
-				<div class="games__dota games__col" data-span="1">
+			<div class="games js-mas-games">
+				<div class="games__dota games__col">
 					<div class="games__content">
 						<p class="title">Dota 2</p>
 						<p class="description">
@@ -75,7 +82,7 @@
 						<a href="">Join</a>
 					</div>
 				</div>
-				<div class="games__csgo games__col--2" data-span="2">
+				<div class="games__csgo games__col--2">
 					<div class="games__content ">
 						<p class="title">Counter Strike: Global Offensive</p>
 						<p class="description">
@@ -84,13 +91,13 @@
 						<a href="">Join</a>
 					</div>
 				</div>
-				<div class="games__other games__col" data-span="1">
+				<div class="games__other games__col">
 					<div class="games__content">
 						<p class="title">Other Games</p>
 						<a href="">Join</a>
 					</div>
 				</div>
-				<div class="games__SC games__col--2" data-span="2">
+				<div class="games__SC games__col--2">
 					<div class="games__content">
 						<p class="title">Star Craft 2</p>
 						<p class="description">StarCraft II sci-fi real-time strategy.
@@ -98,7 +105,7 @@
 						<a href="">Join</a>
 					</div>
 				</div>
-				<div class="games__lol games__col" data-span="1">
+				<div class="games__lol games__col">
 					<div class="games__content">
 						<p class="title">league of legends</p>
 						<p class="description">League of Legends is a fast-paced, competitive online game that blends
@@ -112,7 +119,7 @@
 	<div class="section" data-anchor="about-us">
 		<div class="container">
 			<div class="about">
-				<h2>Who we Are?</h2>
+				<h2 class="about__title">Who we Are?</h2>
 				<p class="about__subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor est impedit
 					itaque
 					maiores mollitia possimus praesentium quas quos recusandae vitae!</p>
@@ -291,7 +298,7 @@
 	<div class="section" data-anchor="contacts">
 		<div class="container">
 			<div class="contacts">
-				<h2>How to find us</h2>
+				<h2 class="contacts__title">How to find us</h2>
 				<p class="contacts__subtitle">
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, vero.
 				</p>
@@ -299,7 +306,7 @@
 					<div class="contacts__col js-pf-scroll">
 						<div class="contacts__col-cont">
 							<p class="title">Players</p>
-							<p class="subtitle">If you looking for friends to play somethings</p>
+							<p class="subtitle">If you're looking for friends to play favorite games</p>
 							<div class="contacts__game">
 								<p class="ttl"><span>Discord</span></p>
 								<a href="" class="contacts__game_item">Dota 2</a>
@@ -319,7 +326,7 @@
 					<div class="contacts__col js-pf-scroll">
 						<div class="contacts__col-cont">
 							<p class="title">Help</p>
-							<p class="subtitle">If you want help us to evolve and grow up</p>
+							<p class="subtitle">It you wanna help us to grow and evolve</p>
 							<div class="contacts__game">
 								<p class="ttl"><span>Content Managment</span></p>
 								<a href="" class="contacts__game_item">First Second</a>
@@ -338,7 +345,7 @@
 					<div class="contacts__col js-pf-scroll">
 						<div class="contacts__col-cont">
 							<p class="title">Sponsors</p>
-							<p class="subtitle">If you want help with some events and tournaments.</p>
+							<p class="subtitle">If you have desire to help us with events</p>
 							<div class="contacts__sponsors">
 								<p class="ttl"><span>Email</span></p>
 								<a href="" class="contacts__sponsors_item fb100">4yk.roman@gmail.com</a>
@@ -356,8 +363,8 @@
 							</div>
 							<div class="contacts__sponsors">
 								<p class="ttl"><span>Phone</span></p>
-								<a href="" class="contacts__sponsors_item">+38 093 7071 559</a>
-								<a href="" class="contacts__sponsors_item">+38 093 0011 555</a>
+								<a href="" class="contacts__sponsors_item fb100">+38 093 7071 559</a>
+								<a href="" class="contacts__sponsors_item fb100">+38 093 0011 555</a>
 							</div>
 						</div>
 					</div>
@@ -374,10 +381,8 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 
 <script type="text/javascript" src="assets/js/jquery.fullpage.js"></script>
-<script type="text/javascript" src="assets/js/vendor/zepto.js"></script>
-<script type="text/javascript" src="assets/js/vendor/particles.min.js"></script>
+<!--<script type="text/javascript" src="assets/js/vendor/particles.min.js"></script>-->
 
-<script type="text/javascript" src="assets/js/vendor/jquery.waterfall.js"></script>
 <script type="text/javascript" src="assets/js/vendor/slick.min.js"></script>
 <script type="text/javascript" src="assets/js/build.js"></script>
 </body>

@@ -1,0 +1,243 @@
+@include respond-to(md){
+  .container{
+	width : 880px;
+  }
+  .about__subtitle,
+  .games__subtitle,
+  .contacts__subtitle{
+	max-width : 100%;
+	font-size : 22px;
+  }
+  .games__title,
+  .about__title,
+  .contacts__title{
+	line-height : normal;
+	font-size   : 40px;
+  }
+  .games{
+	&__content{
+	  .title{ font-size : 20px; }
+	  .description{
+		font-size : 14px;
+	  }
+	  a{
+		line-height : 30px;
+		bottom      : 10px;
+	  }
+	}
+  }
+
+  .about__description{
+	margin-top : 0;
+	&_text{
+	  max-height : 50vh;
+	}
+  }
+}
+
+@include respond-to(sm){
+  .container{
+	width : 100%;
+  }
+  .section .container{
+	height : auto;
+  }
+  #full-page-nav{
+	display   : block;
+	width     : 200px;
+	transform : translate(200px, 0);
+	&.open{
+	  transform : translate(0, 0);
+	  background : rgba(0,0,0,.6);
+	}
+	li {
+	  a{
+		width : 200px;
+		span{
+		  opacity     : 1;
+		  text-indent : 0px;
+		}
+	  }
+	}
+  }
+  .menu-icon{
+	height     : 50px;
+	width      : 50px;
+	position   : absolute;
+	left       : -50px;
+	top        : 0;
+	background : rgba(0, 0, 0, .6);
+	transform: rotate(0deg);
+	transition: .5s ease-in-out;
+
+	span{
+	  position : absolute;
+	  height : 2px;
+	  left : 10px;
+	  right : 10px;
+	  display : block;
+	  background : #ff9900;
+	  transition: .25s ease-in-out;
+	  -webkit-transform: rotate(0deg);
+
+
+	  &:nth-child(1){
+		top : 15px;
+	  }
+	  &:nth-child(2),
+	  &:nth-child(3){
+		top : 23px;
+	  }
+	  &:nth-child(4){
+		top : 31px;
+	  }
+	}
+	&.open{
+	  left : 0;
+	  background : transparent;
+	  span{
+		&:nth-child(1){
+		  top   : 18px;
+		  width : 0%;
+		  left  : 50%;
+		}
+		&:nth-child(2){
+		  -webkit-transform : rotate(45deg);
+		  -moz-transform    : rotate(45deg);
+		  -o-transform      : rotate(45deg);
+		  transform         : rotate(45deg);
+		}
+		&:nth-child(3){
+		  -webkit-transform : rotate(-45deg);
+		  -moz-transform    : rotate(-45deg);
+		  -o-transform      : rotate(-45deg);
+		  transform         : rotate(-45deg);
+		}
+		&:nth-child(4){
+		  top   : 18px;
+		  width : 0%;
+		  left  : 50%;
+		}
+	  }
+	}
+  }
+  .section{
+	height : auto !important;
+  }
+
+  .games__title,
+  .about__title,
+  .contacts__title{
+	line-height : normal;
+	font-size   : 40px;
+	margin-top : 30px;
+  }
+  .intro__title h1{
+	font-size : 45px;
+  }
+
+  .games{
+	display : flex;
+	flex-wrap: wrap;
+	justify-content : center;
+	&__col,&__col--2{
+	  position : static;
+	  transform: none;
+	}
+	&__col{
+	  height : 300px;
+	}
+	&__col--2{
+	  height : 150px;
+	}
+	&__dota{
+	  order:1;
+	  width : 50% ;
+	}
+	&__lol{
+	  order:2;
+	  width :50% ;
+	}
+	&__csgo{
+	  order:3;
+	  width :100% ;
+	}
+	&__SC{
+	  order:4;
+	  width : 100%;
+	}
+	&__other{
+	  order:5;
+	  width : 50%;
+	  height : 200px;
+	}
+
+	&__content{
+	  &:before{
+		opacity : 1;
+	  }
+	  .title{
+		opacity          : 1;
+		transform        : translate(0, 0);
+		transition       : .5s;
+		transition-delay : .3s;
+	  }
+	  .description{
+		opacity          : 1;
+		transform        : translate(0, 0);
+		transition       : .5s;
+		transition-delay : .6s;
+	  }
+	  a{
+		opacity          : 1;
+		transform        : translate(-50%, 0px);
+		transition       : .5s;
+		transition-delay : .8s color 0s;
+	  }
+	}
+  }
+  .contacts{
+	&__content{
+	  flex-wrap: wrap;
+	}
+	&__col{
+	  height : auto;
+	  margin-bottom : 20px;
+	  max-height: none;
+	  flex-basis: 100%;
+	}
+	&__game{
+	  .ttl span{
+		padding : 0 15px;
+	  }
+	}
+  }
+  .about__modal_content{
+	width :calc(100% - 30px);
+  }
+}
+
+@include respond-to(xs){
+  .about__quest{
+	width : 100%;
+	flex-basis: 100%;
+	margin-bottom : 20px;
+  }
+  .about__flex-row{
+	flex-wrap: wrap;
+  }
+  .games{
+	&__col,&__col--2{
+	  position : static;
+	  height : auto;
+	  width : 100%;
+	  background-position : center top;
+	}
+  }
+  .about h2, .contacts h2, .games__title{
+	font-size : 35px;
+  }
+  .intro__title h1{
+	font-size : 40px;
+  }
+}

@@ -9,32 +9,32 @@
 @mixin respond-to($media) {
 
   @if $media == lg{
-	@media only screen and (min-width : 1200px) {
+	@media only screen and (min-width : 1350px) {
 	  @content;
 	}
   }
 
   @if $media == md{
-	@media only screen and (max-width : 1200px) {
+	@media only screen and (max-width : 1350px) {
 	  @content;
 	}
   }
 
   @if $media == sm{
-	@media only screen and (max-width : 992px) {
+	@media only screen and (max-width : 1000px) {
 	  @content;
 	}
   }
 
   @if $media == xs{
-	@media only screen and (max-width : 768px) {
+	@media only screen and (max-width : 570px) {
 	  @content;
 	}
   }
 
   // width < 479
   @if $media == 479{
-	@media only screen and (max-width : 479px) {
+	@media only screen and (max-width :570px) {
 	  @content;
 	}
   }

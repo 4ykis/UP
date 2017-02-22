@@ -6,16 +6,39 @@
   }
 
   &:nth-child(2){
-	background      : url('../../img/bg-sect3.jpg') no-repeat center;
-	background-size : 100% 100%;
+	//background      : url('../../img/bg-sect3.jpg') no-repeat center;
+	//background-size : 100% 100%;
+	//background: #598900;
+	//background: -moz-linear-gradient(top, #598900 0%, #0a2f4a 77%, #0a2f4a 100%);
+	//background: -webkit-linear-gradient(top, #598900 0%,#0a2f4a 77%,#0a2f4a 100%);
+	//background: linear-gradient(to bottom, #598900 0%,#0a2f4a 77%,#0a2f4a 100%);
+	//filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#598900', endColorstr='#0a2f4a',GradientType=0 );
+
+	background: #2d80b7;
+	background: -moz-linear-gradient(top, #2d80b7 0%, #247db5 22%, #247db5 23%, #2d60b7 47%, #1f4060 82%, #0a2f4a 100%);
+	background: -webkit-linear-gradient(top, #2d80b7 0%,#247db5 22%,#247db5 23%,#2d60b7 47%,#1f4060 82%,#0a2f4a 100%);
+	background: linear-gradient(to bottom, #2d80b7 0%,#247db5 22%,#247db5 23%,#2d60b7 47%,#1f4060 82%,#0a2f4a 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2d80b7', endColorstr='#0a2f4a',GradientType=0 );
   }
   &:nth-child(3){
-	background      : url('../../img/bg-sect4.jpg') no-repeat center;
-	background-size : 100% 100%;
+	//background      : url('../../img/bg-sect4.jpg') no-repeat center;
+	//background-size : 100% 100%;
+
+	background: #0a2f4a;
+	background: -moz-linear-gradient(top, #0a2f4a 0%, #0a2f4a 33%, #15563e 100%);
+	background: -webkit-linear-gradient(top, #0a2f4a 0%,#0a2f4a 33%,#15563e 100%);
+	background: linear-gradient(to bottom, #0a2f4a 0%,#0a2f4a 33%,#15563e 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0a2f4a', endColorstr='#15563e',GradientType=0 );
   }
   &:nth-child(4){
-	background      : url('../../img/bg-sect2.jpg') no-repeat center;
-	background-size : 100% 100%;
+	//background      : url('../../img/bg-sect2.jpg') no-repeat center;
+	//background-size : 100% 100%;
+
+	background: #15563e;
+	background: -moz-linear-gradient(top, #15563e 0%, #0b4f42 36%, #0b4f42 36%, #0b4f42 66%, #02330d 100%);
+	background: -webkit-linear-gradient(top, #15563e 0%,#0b4f42 36%,#0b4f42 36%,#0b4f42 66%,#02330d 100%);
+	background: linear-gradient(to bottom, #15563e 0%,#0b4f42 36%,#0b4f42 36%,#0b4f42 66%,#02330d 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#15563e', endColorstr='#02330d',GradientType=0 );
   }
 }
 
@@ -33,6 +56,9 @@
   flex-wrap       : wrap;
   transition      : .5s;
   justify-content : center;
+  .manu-icon{
+	display : none;
+  }
   li{
 	display    : block;
 	flex-basis : 100%;
@@ -237,11 +263,15 @@
 
   &__col{
 	width : 33%;
+	position : absolute;
 	&--2{
 	  width : 66%;
+	  position : absolute;
 	}
   }
   &__dota{
+	left : 0;
+	top : 0;
 	width   : 33%;
 	padding : 5px;
 	height  : 66%;
@@ -253,6 +283,8 @@
   }
   &__csgo{
 	padding : 5px;
+	right : 0;
+	top : 0;
 	height  : 33%;
 	.games__content{
 	  background      : url('../../img/post/csgo.jpg') no-repeat center;
@@ -260,8 +292,11 @@
 	}
   }
   &__other{
-	height  : 33%;
+	height  : 32%;
+	width : 32%;
 	padding : 5px;
+	left : 34%;
+	top : 34%;
 	.games__content{
 	  background      : url('../../img/post/other.jpg') no-repeat center;
 	  background-size : cover;
@@ -271,6 +306,8 @@
   &__SC{
 	height  : 33%;
 	padding : 5px;
+	left : 0;
+	bottom : 0;
 	.games__content{
 	  background      : url('../../img/post/SC.jpg') no-repeat center;
 	  background-size : cover;
@@ -280,6 +317,8 @@
   &__lol{
 	height  : 66%;
 	padding : 5px;
+	right : 0;
+	bottom : 0;
 	.games__content{
 	  background      : url('../../img/post/Lol.jpg') no-repeat center;
 	  background-size : cover;
@@ -376,7 +415,7 @@
 }
 
 .about{
-  transition : .5;
+  transition : .5s;
   h2{
 	font-size      : 45px;
 	font-family    : $leyton;
@@ -413,8 +452,7 @@
 	}
   }
   &__description{
-
-	border : 1px solid #ffffff;
+	overflow: hidden;
 	border : 1px solid #ffffff;
 	color         : #eeeeee;
 	border-radius : 5px;
@@ -478,11 +516,9 @@
 	  }
 	}
   }
-
   &.open-modal > *:not(.about__modal){
 	filter : blur(5px);
   }
-
   &__modal{
 	position   : absolute;
 	@include position(0, 0, 0, 0);
